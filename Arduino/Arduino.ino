@@ -1,13 +1,22 @@
-int analogPin = 3; 
-int val = 0; 
+const int analogInPin = A0;
 
-void setup()
+String escrever;
+
+int sensorValue = 0;
+
+void setup() 
 {
-	Serial.begin(9600);
+  Serial.begin(9600); 
 }
 
-void loop()
+void loop() 
 {
- val = analogRead(analogPin); 
-	 Serial.println("A0:"+val);// IMPRIMIR PIN:VALOR
+
+  sensorValue = analogRead(analogInPin);            
+ 
+  escrever="A0:"+String(sensorValue);
+  
+  Serial.println(escrever);      
+ 
+  delay(2);                     
 }
