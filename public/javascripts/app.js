@@ -18,6 +18,14 @@ var app = angular.module('myApp', ['myApp.filters', 'myApp.directives'])
         templateUrl: 'partials/trial',
         controller: TrialCtrl
       }).
+      when('/trial/:trialId', {
+        templateUrl: 'partials/trialONE',
+        controller: TrialONECtrl
+      }).
+      when('/probe/:probeId', {
+        templateUrl: 'partials/probe',
+        controller: ProbeCtrl
+      }).      
        when('/watering', {
         templateUrl: 'partials/watering',
         controller: WateringCtrl

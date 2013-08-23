@@ -1,1 +1,24 @@
-h1 TRIAL
+div.row
+  div.col-md-6
+    h2 Create Trial
+    form(ng-submit='criar()' , name="ensaioForm")        
+        div.form-group
+          label(for="nomeEnsaio") Name
+          input(ng-model="nome", required , type="text" ,id="nomeEnsaio" ,placeholder="Trial name").form-control
+        div.form-group
+          label( for="probeID" ) Probe
+          select(id="probeID" ,ng-model="probe",required ,ng-options="prob.name for prob in probes    | filter: !prob.livre ").form-control
+            option(value="") Select probe
+        button(type="submit").btn.btn-default Create  
+  div.col-md-6(ng-show="ensaios.length")
+    h2 {{ensaios.length}} Active Trials
+    table.table.table-bordered.table-hover
+      thead
+        th Name
+        th Probe
+      tbody
+        tr(ng-repeat='ensaio in ensaios')
+          td 
+            a(href="trial/{{$index}}") {{ensaio.nome}}
+          td 
+            a(href="probe/{{ensaio.probe.id}}") {{ensaio.probe.name}}

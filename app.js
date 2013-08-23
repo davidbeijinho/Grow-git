@@ -36,6 +36,8 @@ app.get('/users', user.list);
 	
 app.get('/environment', routes.index);
 app.get('/trial', routes.index);
+app.get('/trial/:trialId', routes.index);
+app.get('/probe/:probeId', routes.index);
 app.get('/watering', routes.index);
 app.get('/reports', routes.index);
 app.get('/journal', routes.index);
