@@ -34,7 +34,7 @@ module.exports = function (socket) {
 			leitura.name="coiso";
 			leitura.pin=pecas[0];
 			leitura.value=pecas[1];
-			leitura.save( function(err, docs)
+			/*leitura.save( function(err, docs)
 			{ 
 				if(err)
 				{
@@ -43,13 +43,15 @@ module.exports = function (socket) {
 				else
 				{
 					aaa++;
-					//console.log(aaa+" < > "+pecas[1]);
+					console.log(aaa+" < > "+pecas[1]);
 
 					var enviar={ "pin":pecas[0], "val_x":pecas[1] };
 					//socket.emit('receber',enviar);
 				}
-			});
-
+			});*/
+			//console.log("VALOR -> "+pecas[1]);
+			var enviar={ "pin":pecas[0], "val_x":pecas[1] };
+			socket.emit('receber',enviar);
 		}
 		else
 			console.log("ERRO "+pecas[1]);

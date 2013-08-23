@@ -22,10 +22,10 @@ function TrialCtrl($scope, $http, $location)
 {
 $scope.kinds = 
 	[
-	{name:'Colheita' , id:0 , activo:true },
-	{name:'Floração'  , id:1 , activo:true  },
-	{name:'Enraizamento' , id:2 , activo:true  },
-	{name:'Vingamento'   , id:3 , activo:true  }
+	{name:'Harvest' , id:0 , activo:true },
+	{name:'Flowering'  , id:1 , activo:true  },
+	{name:'Rooting' , id:2 , activo:true  },
+	{name:'Fruit set'   , id:3 , activo:true  }
 	];
 
 
