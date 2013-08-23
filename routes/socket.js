@@ -2,7 +2,9 @@ var moisture = require("../models/moisture.js");
 var com = require("serialport");
 var aaa=0;
 var gerador= com.SerialPort;
-var serialPort = new gerador("/dev/ttyUSB0", {
+//var serialPort = new gerador("/dev/ttyUSB0", {
+var serialPort = new gerador("/dev/tty.usbserial-A900F4PE", {
+	
 	baudrate: 9600
 	,    parser: com.parsers.readline('\r\n')
 },true);
@@ -44,7 +46,7 @@ module.exports = function (socket) {
 					//console.log(aaa+" < > "+pecas[1]);
 
 					var enviar={ "pin":pecas[0], "val_x":pecas[1] };
-					socket.emit('receber',enviar);
+					//socket.emit('receber',enviar);
 				}
 			});
 

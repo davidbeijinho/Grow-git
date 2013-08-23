@@ -20,6 +20,15 @@ function EnvironmentCtrl($scope, $http, $location) {
 
 function TrialCtrl($scope, $http, $location) 
 {
+$scope.kinds = 
+	[
+	{name:'Colheita' , id:0 , activo:true },
+	{name:'Floração'  , id:1 , activo:true  },
+	{name:'Enraizamento' , id:2 , activo:true  },
+	{name:'Vingamento'   , id:3 , activo:true  }
+	];
+
+
 	$scope.ensaios=[];
 	$scope.probes = 
 	[
@@ -34,8 +43,9 @@ function TrialCtrl($scope, $http, $location)
 		$scope.probe.livre=false;
 		var  ensaio_aux=
 		{
-			 nome:  $scope.nome
+			 name:  $scope.nome
 			,probe: $scope.probe
+			,kind: $scope.kind
 		};
 		$scope.ensaios.push(ensaio_aux);
 		$scope.nome="";
