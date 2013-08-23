@@ -20,10 +20,11 @@ function EnvironmentCtrl($scope, $http, $location) {
 
 function TrialCtrl($scope, $http, $location) 
 {
-$scope.kinds = 
+	$scope.espaco=", ";
+	$scope.kinds = 
 	[
-	{name:'Harvest' , id:0 , activo:true },
-	{name:'Flowering'  , id:1 , activo:true  },
+	{name:'Crop' , id:0 , activo:true },
+	{name:'Blooming'  , id:1 , activo:true  },
 	{name:'Rooting' , id:2 , activo:true  },
 	{name:'Fruit set'   , id:3 , activo:true  }
 	];
@@ -40,15 +41,26 @@ $scope.kinds =
 
 	$scope.criar = function () 
 	{
-		$scope.probe.livre=false;
+		//$scope.probe.livre=false;
+
+		angular.forEach($scope.probe, function(value, key){
+			value.livre=false;
+		});
+
+
 		var  ensaio_aux=
 		{
 			 name:  $scope.nome
 			,probe: $scope.probe
 			,kind: $scope.kind
+			,plant: $scope.plant
 		};
 		$scope.ensaios.push(ensaio_aux);
 		$scope.nome="";
+		$scope.descriptive="";
+		$scope.plant="";
+		$scope.kind="";
+		$scope.ensaioForm.$setPristine();
 	};
 
 
