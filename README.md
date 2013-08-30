@@ -6,7 +6,7 @@ Grow-git
 
 ARDUINO
 
--PIN:VALUE
+-PROBE:PIN:VALUE
 
 
 BACK
