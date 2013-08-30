@@ -48,8 +48,9 @@ app.get('/partials/:name', routes.partials);
 
 
 /*  START SERVER */
+
 var server =http.createServer(app).listen(app.get('port'), function(){
-  io.listen(server,{ log: false }).sockets.on('connection', socket);
+  io.listen(server,{ log: true }).sockets.on('connection', socket);
   console.log('GROW-LAB a correr na porta : ' + app.get('port'));
 });
 

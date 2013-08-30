@@ -23,7 +23,7 @@ serialPort.open(function (err)
 
 
 module.exports = function (socket) {
-
+var enviar={};
 
 	serialPort.on('data', function(data) 
 	{
@@ -51,14 +51,17 @@ module.exports = function (socket) {
 				}
 			});*/
 			//console.log("VALOR -> "+pecas[1]);
-			var enviar={ "probe":pecas[0], "pin":pecas[1], "val_x":pecas[2] };
-			socket.emit('receber',enviar);
+			 enviar={ "probe":pecas[0], "pin":pecas[1], "val_x":pecas[2] };
+		//	socket.emit('receber',enviar);
 		}
 		else
 			console.log("ERRO "+data);
 	});
 
+ setInterval(function () {
 
+    socket.emit('receber', enviar);
+  }, 1000);
 
 
 

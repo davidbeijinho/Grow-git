@@ -10,5 +10,6 @@
 		,"rickshaw":"x"
 		,"socket.io":"x"
 		,"socket.io-client":"x"
+		,"angular-socket-io": "~0.0.2"
 	}
 }

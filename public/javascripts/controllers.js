@@ -3,7 +3,7 @@ function AppCtrl($scope, $http, $location) {
 
 }
 
-function MenuCtrl($scope, $http, $location, socket) {
+function MenuCtrl($scope, $http, $location) {
 
 
 	$scope.isActive = function(route) {
@@ -60,7 +60,7 @@ $scope.nome="";
 $scope.descriptive="";
 $scope.plant="";
 $scope.kind="";
-$scope.ensaioForm.$setPristine();
+//$scope.ensaioForm.$setPristine();
 };
 
 
@@ -164,6 +164,11 @@ socket.on('receber', function (data)
 
 });
 
+
+ $scope.$on("$destroy", function(){
+       console.log("ADEUS");
+       socket.disconect();
+    });
 
 }
 
