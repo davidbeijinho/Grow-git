@@ -1,6 +1,6 @@
 const int analogInPin = A0;
 
-String escrever,sensor,probe;
+String escrever;
 
 int sensorValue = 0;
 
@@ -13,9 +13,8 @@ void loop()
 {
 
   sensorValue = analogRead(analogInPin);            
-  sensor="A0:";
-  probe="P1:";
-  escrever=probe+sensor+String(sensorValue);
+
+  escrever="P1:A0:"+String(sensorValue);
   
   Serial.println(escrever);      
  
