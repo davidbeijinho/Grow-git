@@ -28,12 +28,13 @@ module.exports = function (socket) {
 	serialPort.on('data', function(data) 
 	{
 		var pecas=data.split(':'); 
-		if ((pecas[0]=="A0") && ( Number(pecas[1])!=NaN ))
+		if ((pecas[0]=="P1") && (pecas[1]=="A0") && ( Number(pecas[2])!=NaN ))
 		{
 			var leitura=new moisture;
 			leitura.name="coiso";
-			leitura.pin=pecas[0];
-			leitura.value=pecas[1];
+			leitura.probe=pecas[0];
+			leitura.pin=pecas[1];
+			leitura.value=pecas[2];
 			/*leitura.save( function(err, docs)
 			{ 
 				if(err)
@@ -50,11 +51,11 @@ module.exports = function (socket) {
 				}
 			});*/
 			//console.log("VALOR -> "+pecas[1]);
-			var enviar={ "pin":pecas[0], "val_x":pecas[1] };
+			var enviar={ "probe":pecas[0], "pin":pecas[1], "val_x":pecas[2] };
 			socket.emit('receber',enviar);
 		}
 		else
-			console.log("ERRO "+pecas[1]);
+			console.log("ERRO "+data);
 	});
 
 

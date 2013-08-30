@@ -4,6 +4,7 @@ var ObjectId = mongoose.Schema.Types.ObjectId;
 var moisture = mongoose.Schema({
 	name: {type: String , required: true}
 	, data: { type: Date, default: Date.now  }
+	, probe:   String
 	, pin:   String
 	, value:   Number
 });
