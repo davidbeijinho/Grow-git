@@ -15,7 +15,7 @@ void loop()
   sensorValue = analogRead(analogInPin);            
   sensor="A0";
   probe="P1";
-  escrever=sensor+":"+probe+":"+String(sensorValue);
+  escrever=probe+":"+sensor+":"+String(sensorValue);
   
   Serial.println(escrever);      
  
